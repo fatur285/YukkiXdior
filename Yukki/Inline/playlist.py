@@ -6,11 +6,11 @@ def check_markup(user_name, user_id, videoid):
     buttons = [
         [
             InlineKeyboardButton(
-                text=f"Group's Playlist",
+                text=f"Group's P-list",
                 callback_data=f"playlist_check {user_id}|Group|{videoid}",
             ),
             InlineKeyboardButton(
-                text=f"{user_name[:8]}'s Playlist",
+                text=f"{user_name[:8]}'s P-list",
                 callback_data=f"playlist_check {user_id}|Personal|{videoid}",
             ),
         ],
@@ -23,11 +23,11 @@ def playlist_markup(user_name, user_id, videoid):
     buttons = [
         [
             InlineKeyboardButton(
-                text=f"Group's Playlist",
+                text=f"Group's P-list",
                 callback_data=f"show_genre {user_id}|Group|{videoid}",
             ),
             InlineKeyboardButton(
-                text=f"{user_name[:8]}'s Playlist",
+                text=f"{user_name[:8]}'s P-list",
                 callback_data=f"show_genre {user_id}|Personal|{videoid}",
             ),
         ],
@@ -187,17 +187,17 @@ def third_playlist_markup(user_name, user_id, third_name, userid, videoid):
     buttons = [
         [
             InlineKeyboardButton(
-                text=f"Group's Playlist",
+                text=f"Group's P-list",
                 callback_data=f"show_genre {user_id}|Group|{videoid}",
             ),
             InlineKeyboardButton(
-                text=f"{user_name[:8]}'s Playlist",
+                text=f"{user_name[:8]}'s P-list",
                 callback_data=f"show_genre {user_id}|Personal|{videoid}",
             ),
         ],
         [
             InlineKeyboardButton(
-                text=f"{third_name[:16]}'s Playlist",
+                text=f"{third_name[:16]}'s P-list",
                 callback_data=f"show_genre {userid}|third|{videoid}",
             ),
         ],
@@ -214,7 +214,7 @@ def paste_queue_markup(url):
             InlineKeyboardButton(text="‣‣I", callback_data=f"skipcb"),
             InlineKeyboardButton(text="▢", callback_data=f"stopcb"),
         ],
-        [InlineKeyboardButton(text="Antrian Playlist", url=f"{url}")],
+        [InlineKeyboardButton(text="Antrian", url=f"{url}")],
         [InlineKeyboardButton(text="Tutup", callback_data=f"close")],
     ]
     return buttons
@@ -224,11 +224,11 @@ def fetch_playlist(user_name, type, genre, user_id, url):
     buttons = [
         [
             InlineKeyboardButton(
-                text=f"Play {user_name[:10]}'s {genre} Playlist",
+                text=f"Play {user_name[:10]}'s {genre} P-list",
                 callback_data=f"play_playlist {user_id}|{type}|{genre}",
             ),
         ],
-        [InlineKeyboardButton(text="Liat Playlist", url=f"{url}")],
+        [InlineKeyboardButton(text="Liat P-list", url=f"{url}")],
         [InlineKeyboardButton(text="Tutup", callback_data=f"close")],
     ]
     return buttons
