@@ -80,7 +80,7 @@ async def useradd(_, message: Message):
     await asyncio.gather(
         message.delete(),
         message.reply_text(
-            text=f"Thanks udah masukin gua di » {CallbackQuery.message.chat.title} «.\n{MUSIC_BOT_NAME}is alive.\n\nUntuk bantuan atau bantuan lainnya tekan Tombol Menu dibawah, atau bergabung ke grup support dan channel updates.",
+            text=f"Thanks udah masukin gua di {CallbackQuery.message.chat.title}.\n{MUSIC_BOT_NAME}is alive.\n\nUntuk bantuan atau bantuan lainnya tekan Tombol Menu dibawah, atau bergabung ke grup support dan channel updates.",
             reply_markup=InlineKeyboardMarkup(out[1]),
        ),
     )
@@ -91,7 +91,7 @@ async def okaybhai(_, CallbackQuery):
     await CallbackQuery.answer("Going Back ...")
     out = start_pannel()
     await CallbackQuery.edit_message_text(
-        text=f"Thanks udah masukin gua di » {CallbackQuery.message.chat.title} «.\n{MUSIC_BOT_NAME}is alive.\n\nUntuk bantuan atau bantuan lainnya tekan Tombol Menu dibawah, atau bergabung ke grup support dan channel updates.",
+        text=f"Thanks udah masukin gua di {CallbackQuery.message.chat.title}.\n{MUSIC_BOT_NAME}is alive.\n\nUntuk bantuan atau bantuan lainnya tekan Tombol Menu dibawah, atau bergabung ke grup support dan channel updates.",
         reply_markup=InlineKeyboardMarkup(out[1]),
     )
 
