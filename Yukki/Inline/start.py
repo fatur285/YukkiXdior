@@ -15,7 +15,7 @@ def start_pannel():
             ],
             [
                 InlineKeyboardButton(
-                    text="🔧 Settings", callback_data="settingm"
+                    text="⚙️ Settings", callback_data="settingm"
                 )
             ],
         ]
@@ -29,12 +29,12 @@ def start_pannel():
             ],
             [
                 InlineKeyboardButton(
-                    text="🔧 Settings", callback_data="settingm"
+                    text="⚙️ Settings", callback_data="settingm"
                 )
             ],
             [
                 InlineKeyboardButton(
-                    text="📨Support Group", url=f"{SUPPORT_GROUP}"
+                    text="Support Group", url=f"{SUPPORT_GROUP}"
                 ),
             ],
         ]
@@ -48,12 +48,12 @@ def start_pannel():
             ],
             [
                 InlineKeyboardButton(
-                    text="🔧 Settings", callback_data="settingm"
+                    text="⚙️ Settings", callback_data="settingm"
                 )
             ],
             [
                 InlineKeyboardButton(
-                    text="📨Official Channel", url=f"{SUPPORT_CHANNEL}"
+                    text="Channel Updates", url=f"{SUPPORT_CHANNEL}"
                 ),
             ],
         ]
@@ -67,15 +67,15 @@ def start_pannel():
             ],
             [
                 InlineKeyboardButton(
-                    text="🔧 Settings", callback_data="settingm"
+                    text="⚙️ Settings", callback_data="settingm"
                 )
             ],
             [
                 InlineKeyboardButton(
-                    text="📨Official Channel", url=f"{SUPPORT_CHANNEL}"
+                    text="Channel Updates", url=f"{SUPPORT_CHANNEL}"
                 ),
                 InlineKeyboardButton(
-                    text="📨Support Group", url=f"{SUPPORT_GROUP}"
+                    text="Support Group", url=f"{SUPPORT_GROUP}"
                 ),
             ],
         ]
@@ -92,7 +92,7 @@ def private_panel():
             ],
             [
                 InlineKeyboardButton(
-                    "➕ Add me to your Group",
+                    "➕ Masukin gua ke gc lu ➕",
                     url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                 )
             ],
@@ -107,13 +107,13 @@ def private_panel():
             ],
             [
                 InlineKeyboardButton(
-                    "➕ Add me to your Group",
+                    "➕ Masukin gua ke gc lu ➕",
                     url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                 )
             ],
             [
                 InlineKeyboardButton(
-                    text="📨Support Group", url=f"{SUPPORT_GROUP}"
+                    text="Support Group", url=f"{SUPPORT_GROUP}"
                 ),
             ],
         ]
@@ -127,13 +127,13 @@ def private_panel():
             ],
             [
                 InlineKeyboardButton(
-                    "➕ Add me to your Group",
+                    "➕ Masukin gua ke gc lu ➕",
                     url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                 )
             ],
             [
                 InlineKeyboardButton(
-                    text="📨Official Channel", url=f"{SUPPORT_CHANNEL}"
+                    text="Channel Updates", url=f"{SUPPORT_CHANNEL}"
                 ),
             ],
         ]
@@ -147,16 +147,16 @@ def private_panel():
             ],
             [
                 InlineKeyboardButton(
-                    "➕ Add me to your Group",
+                    "➕ Masukin gua ke gc lu ➕",
                     url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                 )
             ],
             [
                 InlineKeyboardButton(
-                    text="📨Official Channel", url=f"{SUPPORT_CHANNEL}"
+                    text="Channel Updates", url=f"{SUPPORT_CHANNEL}"
                 ),
                 InlineKeyboardButton(
-                    text="📨Support Group", url=f"{SUPPORT_GROUP}"
+                    text="Support Group", url=f"{SUPPORT_GROUP}"
                 ),
             ],
         ]
@@ -166,7 +166,7 @@ def private_panel():
 def setting_markup():
     buttons = [
         [
-            InlineKeyboardButton(text="🔈 Audio Quality", callback_data="AQ"),
+            InlineKeyboardButton(text="🔈 Kualitas Audio", callback_data="AQ"),
             InlineKeyboardButton(text="🎚 Audio Volume", callback_data="AV"),
         ],
         [
@@ -178,11 +178,11 @@ def setting_markup():
             ),
         ],
         [
-            InlineKeyboardButton(text="✖️ Close", callback_data="close"),
-            InlineKeyboardButton(text="🔙 Go Back", callback_data="okaybhai"),
+            InlineKeyboardButton(text="✖️ Keluar", callback_data="close"),
+            InlineKeyboardButton(text="🔙 Kembali", callback_data="okaybhai"),
         ],
     ]
-    return f"🔧  **{MUSIC_BOT_NAME} Settings**", buttons
+    return f"⚙️  **{MUSIC_BOT_NAME} Settings**", buttons
 
 
 def volmarkup():
@@ -205,9 +205,9 @@ def volmarkup():
                 text="🔽 Custom Volume 🔽", callback_data="Custommarkup"
             )
         ],
-        [InlineKeyboardButton(text="🔙 Go back", callback_data="settingm")],
+        [InlineKeyboardButton(text="🔙 Kembali", callback_data="settingm")],
     ]
-    return f"🔧  **{MUSIC_BOT_NAME} Settings**", buttons
+    return f"⚙️  **{MUSIC_BOT_NAME} Settings**", buttons
 
 
 def custommarkup():
@@ -226,7 +226,7 @@ def custommarkup():
         ],
         [InlineKeyboardButton(text="🔼Custom Volume 🔼", callback_data="AV")],
     ]
-    return f"🔧  **{MUSIC_BOT_NAME} Settings**", buttons
+    return f"⚙️  **{MUSIC_BOT_NAME} Settings**", buttons
 
 
 def usermarkup():
@@ -240,9 +240,9 @@ def usermarkup():
                 text="📋 Authorized Users Lists", callback_data="USERLIST"
             )
         ],
-        [InlineKeyboardButton(text="🔙 Go back", callback_data="settingm")],
+        [InlineKeyboardButton(text="🔙 Kembali", callback_data="settingm")],
     ]
-    return f"🔧  **{MUSIC_BOT_NAME} Settings**", buttons
+    return f"⚙️  **{MUSIC_BOT_NAME} Settings**", buttons
 
 
 def dashmarkup():
@@ -255,6 +255,6 @@ def dashmarkup():
             InlineKeyboardButton(text="💻 Cpu", callback_data="CPT"),
             InlineKeyboardButton(text="💽 Disk", callback_data="DIT"),
         ],
-        [InlineKeyboardButton(text="🔙 Go back", callback_data="settingm")],
+        [InlineKeyboardButton(text="🔙 Kembali", callback_data="settingm")],
     ]
-    return f"🔧  **{MUSIC_BOT_NAME} Settings**", buttons
+    return f"⚙️  **{MUSIC_BOT_NAME} Settings**", buttons
