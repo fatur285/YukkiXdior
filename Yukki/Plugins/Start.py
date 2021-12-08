@@ -80,9 +80,9 @@ async def useradd(_, message: Message):
     await asyncio.gather(
         message.delete(),
         message.reply_text(
-            f"Thanks for having me in {message.chat.title}.\n{MUSIC_BOT_NAME} is alive.\n\nFor any assistance or help, checkout our support group and channel.",
+            text=f"Thanks udah masukin gua di » {CallbackQuery.message.chat.title} «.\n{MUSIC_BOT_NAME}is alive.\n\nUntuk bantuan atau bantuan lainnya tekan Tombol Menu dibawah, atau bergabung ke grup support dan channel updates.",
             reply_markup=InlineKeyboardMarkup(out[1]),
-        ),
+       ),
     )
 
 
@@ -91,7 +91,7 @@ async def okaybhai(_, CallbackQuery):
     await CallbackQuery.answer("Going Back ...")
     out = start_pannel()
     await CallbackQuery.edit_message_text(
-        text=f"Thanks for having me in {CallbackQuery.message.chat.title}.\n{MUSIC_BOT_NAME}is alive.\n\nFor any assistance or help, checkout our support group and channel.",
+        text=f"Thanks udah masukin gua di » {CallbackQuery.message.chat.title} «.\n{MUSIC_BOT_NAME}is alive.\n\nUntuk bantuan atau bantuan lainnya tekan Tombol Menu dibawah, atau bergabung ke grup support dan channel updates.",
         reply_markup=InlineKeyboardMarkup(out[1]),
     )
 
@@ -458,5 +458,5 @@ async def start_markup_check(_, CallbackQuery):
     if command == "DIT":
         diske = psutil.disk_usage("/").percent
         await CallbackQuery.answer(
-            f"Yukki Disk Usage: {diske}%", show_alert=True
+            f"Fanda Disk Usage: {diske}%", show_alert=True
         )
