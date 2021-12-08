@@ -65,7 +65,7 @@ async def welcome(_, message: Message):
             if member.id == BOT_ID:
                 out = start_pannel()
                 await message.reply_text(
-                    f"Welcome To {MUSIC_BOT_NAME}\n\nPromote me as administrator in your group otherwise I will not function properly.",
+                    f"Thanks udah masukin gua di {CallbackQuery.message.chat.title}\n\nPromotin gua sebagai admin di grup lu kalo ga, gua ga bakal bisa berfungsi sepenuhnya.",
                     reply_markup=InlineKeyboardMarkup(out[1]),
                 )
                 return
@@ -80,7 +80,7 @@ async def useradd(_, message: Message):
     await asyncio.gather(
         message.delete(),
         message.reply_text(
-            text=f"Thanks udah masukin gua di {CallbackQuery.message.chat.title}.\n{MUSIC_BOT_NAME}is alive.\n\nUntuk bantuan atau bantuan lainnya tekan Tombol Menu dibawah, atau bergabung ke grup support dan channel updates.",
+            f"Thanks udah masukin gua di {CallbackQuery.message.chat.title}.\n{MUSIC_BOT_NAME}is alive.\n\nUntuk bantuan atau bantuan lainnya tekan Tombol Menu dibawah, atau bergabung ke grup support dan channel updates.",
             reply_markup=InlineKeyboardMarkup(out[1]),
        ),
     )
