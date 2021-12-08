@@ -129,7 +129,7 @@ home_text_pm = f"""╭┈╾────────────── ·﻿ ﻿
 ┊┊ꜰɪᴛᴜʀ ᴏʙʀᴏʟᴀɴ sᴜᴀʀᴀ ᴛᴇʟᴇɢʀᴀᴍ!
 ╰┈╾──────••────────────╯
 
-Tekan tombol **Menu** dibawah untuk melihat daftar perintah"""
+⚙️ Tekan tombol **Perintah** dibawah untuk melihat daftar perintah"""
 
 
 @app.on_message(filters.command("help") & filters.private)
