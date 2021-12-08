@@ -6,22 +6,22 @@ def checker(mystic):
     async def wrapper(_, message):
         if message.sender_chat:
             return await message.reply_text(
-                "You're an __Anonymous Admin__ in this Chat Group!\nRevert back to User Account From Admin Rights."
+                "Lu __Admin Anonim__ Goblok!\nBalikin dulu ke akun asli lu."
             )
         blacklisted_chats_list = await blacklisted_chats()
         if message.chat.id in blacklisted_chats_list:
             await message.reply_text(
-                f"**Blacklisted Chat**\n\nYour chat has been blacklisted by Sudo Users.Ask any __SUDO USER__ to whitelist.\nCheck Sudo Users List [From Here](https://t.me/{BOT_USERNAME}?start=sudolist)"
+                f"**Blacklisted Chat**\n\nObrolan Lu Di Blacklist Sama Sudo User.Minta __SUDO USER__ buat whitelist obrolan lu.\nPeriksa Daftar Sudo User [Disini](https://t.me/{BOT_USERNAME}?start=sudolist)"
             )
             return await app.leave_chat(message.chat.id)
         if await is_on_off(1):
             if int(message.chat.id) != int(LOG_GROUP_ID):
                 return await message.reply_text(
-                    f"Bot is under Maintenance. Sorry for the inconvenience!"
+                    f"Bot lagi dalam masa Pemeliharaan. Maaf atas ketidaknyamanannya!"
                 )
         if await is_gbanned_user(message.from_user.id):
             return await message.reply_text(
-                f"**Gbanned User**\n\nYou're gbanned from using Bot.Ask any __SUDO USER__ to ungban.\nCheck Sudo Users List [From Here](https://t.me/{BOT_USERNAME}?start=sudolist)"
+                f"**Gbanned User**\n\nlu di gbanned buat make Bot.Minta __SUDO USER__ buat ungban.\nPeriksa Daftar Sudo User [Disini](https://t.me/{BOT_USERNAME}?start=sudolist)"
             )
         return await mystic(_, message)
 
@@ -38,7 +38,7 @@ def checkerCB(mystic):
         if await is_on_off(1):
             if int(CallbackQuery.message.chat.id) != int(LOG_GROUP_ID):
                 return await CallbackQuery.answer(
-                    "Bot is under Maintenance. Sorry for the inconvenience!",
+                    "Bot lagi dalam masa Pemeliharaan. Maaf atas ketidaknyamanannya!",
                     show_alert=True,
                 )
         if await is_gbanned_user(CallbackQuery.from_user.id):
