@@ -1,4 +1,4 @@
-<h1 align= center><b>⭐️ Fanda Toxic Bot ⭐️</b></h1>
+<h1 align= center><b>⭐️ Fanda Toxic ⭐️</b></h1>
 <h3 align = center> A Telegram Music Bot written in Python using Pyrogram and Py-Tgcalls </h3>
 
 <p align="center">
