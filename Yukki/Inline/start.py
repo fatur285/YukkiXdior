@@ -10,12 +10,12 @@ def start_pannel():
         buttons = [
             [
                 InlineKeyboardButton(
-                    text="📚 Menu Perintah", callback_data="shikhar"
+                    text="Perintah", callback_data="shikhar"
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    text="⚙️ Settings", callback_data="settingm"
+                    text="Settings", callback_data="settingm"
                 )
             ],
         ]
@@ -24,17 +24,17 @@ def start_pannel():
         buttons = [
             [
                 InlineKeyboardButton(
-                    text="📚 Menu Perintah", callback_data="shikhar"
+                    text="Perintah", callback_data="shikhar"
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    text="⚙️ Settings", callback_data="settingm"
+                    text="Settings", callback_data="settingm"
                 )
             ],
             [
                 InlineKeyboardButton(
-                    text="Support Group", url=f"{SUPPORT_GROUP}"
+                    text="Support", url=f"{SUPPORT_GROUP}"
                 ),
             ],
         ]
@@ -43,17 +43,17 @@ def start_pannel():
         buttons = [
             [
                 InlineKeyboardButton(
-                    text="📚 Menu Perintah", callback_data="shikhar"
+                    text="Perintah", callback_data="shikhar"
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    text="⚙️ Settings", callback_data="settingm"
+                    text="Settings", callback_data="settingm"
                 )
             ],
             [
                 InlineKeyboardButton(
-                    text="Channel Updates", url=f"{SUPPORT_CHANNEL}"
+                    text="Updates", url=f"{SUPPORT_CHANNEL}"
                 ),
             ],
         ]
@@ -62,20 +62,20 @@ def start_pannel():
         buttons = [
             [
                 InlineKeyboardButton(
-                    text="📚 Menu Perintah", callback_data="shikhar"
+                    text="Perintah", callback_data="shikhar"
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    text="⚙️ Settings", callback_data="settingm"
+                    text="Settings", callback_data="settingm"
                 )
             ],
             [
                 InlineKeyboardButton(
-                    text="Channel Updates", url=f"{SUPPORT_CHANNEL}"
+                    text="Updates", url=f"{SUPPORT_CHANNEL}"
                 ),
                 InlineKeyboardButton(
-                    text="Support Group", url=f"{SUPPORT_GROUP}"
+                    text="Support", url=f"{SUPPORT_GROUP}"
                 ),
             ],
         ]
@@ -87,7 +87,7 @@ def private_panel():
         buttons = [
             [
                 InlineKeyboardButton(
-                    text="📚 Menu Perintah", callback_data="shikhar"
+                    text="Perintah", callback_data="shikhar"
                 ),
             ],
             [
@@ -102,7 +102,7 @@ def private_panel():
         buttons = [
             [
                 InlineKeyboardButton(
-                    text="📚 Menu Perintah", callback_data="shikhar"
+                    text="Perintah", callback_data="shikhar"
                 ),
             ],
             [
@@ -113,7 +113,7 @@ def private_panel():
             ],
             [
                 InlineKeyboardButton(
-                    text="Support Group", url=f"{SUPPORT_GROUP}"
+                    text="Support", url=f"{SUPPORT_GROUP}"
                 ),
             ],
         ]
@@ -122,7 +122,7 @@ def private_panel():
         buttons = [
             [
                 InlineKeyboardButton(
-                    text="📚 Menu Perintah", callback_data="shikhar"
+                    text="Perintah", callback_data="shikhar"
                 ),
             ],
             [
@@ -133,7 +133,7 @@ def private_panel():
             ],
             [
                 InlineKeyboardButton(
-                    text="Channel Updates", url=f"{SUPPORT_CHANNEL}"
+                    text="Updates", url=f"{SUPPORT_CHANNEL}"
                 ),
             ],
         ]
@@ -142,21 +142,24 @@ def private_panel():
         buttons = [
             [
                 InlineKeyboardButton(
-                    text="📚 Menu Perintah", callback_data="shikhar"
-                ),
-            ],
-            [
-                InlineKeyboardButton(
-                    "➕ Masukin gua ke gc lu ➕",
+                    "➕ Masukin gua ke GC lu ➕",
                     url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                 )
             ],
             [
                 InlineKeyboardButton(
-                    text="Channel Updates", url=f"{SUPPORT_CHANNEL}"
+                    text="Perintah", callback_data="shikhar"
                 ),
                 InlineKeyboardButton(
-                    text="Support Group", url=f"{SUPPORT_GROUP}"
+                    text="Owner", url=f"https://t.me/faturdiorjuga"
+                ),
+            ],
+            [
+                InlineKeyboardButton(
+                    text="Updates", url=f"{SUPPORT_CHANNEL}"
+                ),
+                InlineKeyboardButton(
+                    text="Support", url=f"{SUPPORT_GROUP}"
                 ),
             ],
         ]
@@ -178,8 +181,8 @@ def setting_markup():
             ),
         ],
         [
-            InlineKeyboardButton(text="✖️ Keluar", callback_data="close"),
             InlineKeyboardButton(text="🔙 Kembali", callback_data="okaybhai"),
+            InlineKeyboardButton(text="✖️ Keluar", callback_data="close"),
         ],
     ]
     return f"⚙️  **{MUSIC_BOT_NAME} Settings**", buttons
