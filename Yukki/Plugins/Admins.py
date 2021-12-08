@@ -30,31 +30,31 @@ from Yukki.Utilities.youtube import get_yt_info_id
 loop = asyncio.get_event_loop()
 
 
-__MODULE__ = "Voice Chat"
+__MODULE__ = "Obrolan Suara"
 __HELP__ = """
 
 
 /pause
-- Pause the playing music on voice chat.
+- Jeda pemutaran musik di obrolan suara.
 
 /resume
-- Resume the paused music on voice chat.
+- Lanjutin musik yang dijeda di obrolan suara.
 
 /skip
-- Skip the current playing music on voice chat
+- Skip musik yang sedang diputar di obrolan suara.
 
 /end or /stop
-- Stop the playout.
+- Matiin lagu yang lagi di puter.
 
 /queue
-- Check queue list.
+- Liat antrian lagu.
 
 
 **Note:**
-Only for Sudo Users
+Hanya untuk Pengguna Sudo
 
 /activevc
-- Check active voice chats on bot.
+- Periksa obrolan suara aktif di bot.
 
 """
 
@@ -78,7 +78,7 @@ async def admins(_, message: Message):
         await music_off(chat_id)
         await Yukki.pytgcalls.pause_stream(chat_id)
         await message.reply_text(
-            f"🎧 Voicechat Paused by {message.from_user.mention}!"
+            f"🎧 Lagu dijeda sama si {message.from_user.mention}!"
         )
     if message.command[0][1] == "e":
         if await is_music_playing(message.chat.id):
@@ -86,7 +86,7 @@ async def admins(_, message: Message):
         await music_on(chat_id)
         await Yukki.pytgcalls.resume_stream(message.chat.id)
         await message.reply_text(
-            f"🎧 Voicechat Resumed by {message.from_user.mention}!"
+            f"🎧 Lagu dilanjutin sama si {message.from_user.mention}!"
         )
     if message.command[0][1] == "t" or message.command[0][1] == "n":
         try:
@@ -96,14 +96,14 @@ async def admins(_, message: Message):
         await remove_active_chat(chat_id)
         await Yukki.pytgcalls.leave_group_call(message.chat.id)
         await message.reply_text(
-            f"🎧 Voicechat End/Stopped by {message.from_user.mention}!"
+            f"🎧 Lagu dimatiin sama si {message.from_user.mention}!"
         )
     if message.command[0][1] == "k":
         Queues.task_done(chat_id)
         if Queues.is_empty(chat_id):
             await remove_active_chat(chat_id)
             await message.reply_text(
-                "No more music in __Queue__ \n\nLeaving Voice Chat"
+                "Udah ga ada lagu di __Antrian__ \n\nTurun dari obrolan suara"
             )
             await Yukki.pytgcalls.leave_group_call(message.chat.id)
             return
@@ -153,7 +153,7 @@ async def admins(_, message: Message):
                     photo=thumb,
                     reply_markup=InlineKeyboardMarkup(buttons),
                     caption=(
-                        f"<b>__Skipped Voice Chat__</b>\n\n🎥<b>__Started Playing:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={videoid}) \n⏳<b>__Duration:__</b> {duration_min} Mins\n👤**__Requested by:__** {mention}"
+                        f"<b>__Skip lagunya jelek__</b>\n\n🏷️<b>__Sekarang muterin:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={videoid}) \n🕒<b>__Durasinya:__</b> {duration_min} Menit\n🎧**__Permintaan si:__** {mention}"
                     ),
                 )
                 os.remove(thumb)
@@ -198,7 +198,7 @@ async def admins(_, message: Message):
                 final_output = await message.reply_photo(
                     photo=thumb,
                     reply_markup=InlineKeyboardMarkup(buttons),
-                    caption=f"<b>__Skipped Voice Chat__</b>\n\n🎥<b>__Started Playing:__</b> {title} \n⏳<b>__Duration:__</b> {duration_min} \n👤<b>__Requested by:__ </b> {mention}",
+                    caption=f"<b>__Skip lagunya jelek__</b>\n\n🏷️<b>__Sekarang muterin:__</b> {title} \n🕒<b>__Durasinya:__</b> {duration_min} \n🎧<b>__Permintaan si:__ </b> {mention}",
                 )
             await start_timer(
                 videoid,
