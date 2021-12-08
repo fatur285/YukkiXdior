@@ -78,7 +78,7 @@ async def initiate_bot():
         await asyncio.sleep(2.4)
         await startup_delete_last(_____)
     console.print(
-        "[bold green]Congrats!! Yukki Music Bot has started successfully!\n"
+        "[bold green]Congrats!! Fanda Toxic Bot has started successfully!\n"
     )
     try:
         await app.send_message(
@@ -127,7 +127,9 @@ home_text_pm = f"""╭┈╾────────────── ·﻿ ﻿
 ┊┊ʙᴏᴛ sɪᴍᴘʟᴇ ʏᴀɴɢ ᴅɪʀᴀɴᴄᴀɴɢ
 ┊┊ᴜɴᴛᴜᴋ ᴍᴇᴍᴜᴛᴀʀ ʟᴀɢᴜ ᴍᴇʟᴀʟᴜɪ
 ┊┊ꜰɪᴛᴜʀ ᴏʙʀᴏʟᴀɴ sᴜᴀʀᴀ ᴛᴇʟᴇɢʀᴀᴍ!
-╰┈╾──────••────────────╯"""
+╰┈╾──────••────────────╯
+
+Tekan tombol **Menu** dibawah untuk melihat daftar perintah"""
 
 
 @app.on_message(filters.command("help") & filters.private)
