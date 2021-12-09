@@ -86,13 +86,13 @@ def search_markup(
         ],
         [
             InlineKeyboardButton(
-                text="<", callback_data=f"popat 1|{query}|{user_id}"
+                text="⌫", callback_data=f"popat 1|{query}|{user_id}"
             ),
             InlineKeyboardButton(
                 text="Tutup", callback_data=f"forceclose {query}|{user_id}"
             ),
             InlineKeyboardButton(
-                text=">", callback_data=f"popat 1|{query}|{user_id}"
+                text="⌦", callback_data=f"popat 1|{query}|{user_id}"
             ),
         ],
     ]
@@ -140,13 +140,13 @@ def search_markup2(
         ],
         [
             InlineKeyboardButton(
-                text="<", callback_data=f"popat 2|{query}|{user_id}"
+                text="q⌫", callback_data=f"popat 2|{query}|{user_id}"
             ),
             InlineKeyboardButton(
                 text="Tutup", callback_data=f"forceclose {query}|{user_id}"
             ),
             InlineKeyboardButton(
-                text=">", callback_data=f"popat 2|{query}|{user_id}"
+                text="⌦", callback_data=f"popat 2|{query}|{user_id}"
             ),
         ],
     ]
@@ -178,7 +178,7 @@ def primary_markup(videoid, user_id, current_time, total_time):
     buttons = [
         [
             InlineKeyboardButton(
-                text=f"{total_time} ──𖣠‌─────────── {current_time}",
+                text=f"{total_time} ──☉─────────── {current_time}",
                 callback_data=f"timer_checkup_markup {videoid}|{user_id}",
             )
         ],
@@ -202,7 +202,7 @@ def timer_markup(videoid, user_id, current_time, total_time):
     buttons = [
         [
             InlineKeyboardButton(
-                text=f"{total_time} ──𖣠‌─────────── {current_time}",
+                text=f"{total_time} ──☉─────────── {current_time}",
                 callback_data=f"timer_checkup_markup {videoid}|{user_id}",
             )
         ],
@@ -229,7 +229,7 @@ def audio_markup(videoid, user_id, current_time, total_time):
     buttons = [
         [
             InlineKeyboardButton(
-                text=f"{total_time} ──𖣠‌─────────── {current_time}",
+                text=f"{total_time} ──☉─────────── {current_time}",
                 callback_data=f"timer_checkup_markup {videoid}|{user_id}",
             )
         ],
@@ -248,7 +248,7 @@ def audio_timer_markup_start(videoid, user_id, current_time, total_time):
     buttons = [
         [
             InlineKeyboardButton(
-                text=f"{total_time} ──𖣠‌─────────── {current_time}",
+                text=f"{total_time} ──☉─────────── {current_time}",
                 callback_data=f"timer_checkup_markup {videoid}|{user_id}",
             )
         ],
