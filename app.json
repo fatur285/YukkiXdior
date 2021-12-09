@@ -1,18 +1,16 @@
 {
   "name": "Fanda Toxic Bot",
   "description": "A Telegram Music Bot with proper functions written in Python with Pyrogram and Py-Tgcalls.",
-  "repository": "https://github.com/DIORrios285/FaturToxic",
+  "repository": "https://github.com/DIORrios285/FandaToxic",
   "logo": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
   "keywords": [
   "python3",
   "telegram",
   "bot",
-  "Yukki",
-  "YukkiMusicBot",
   "telegram-bot",
   "pyrogram"
   ],
-  "repository": "https://github.com/DIORrios285/FaturToxic",
+  "repository": "https://github.com/DIORrios285/FandaToxic",
   "stack": "container",
   "env": {
     "API_ID": {
