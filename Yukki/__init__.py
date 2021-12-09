@@ -69,13 +69,13 @@ async def initiate_bot():
     )
     console.print(header)
     with console.status(
-        "[magenta] Booting up The Yukki Music Bot...",
+        "[magenta] Booting up The Fanda Toxic Bot...",
     ) as status:
         console.print("┌ [red]Booting Up The Clients...\n")
         await app.start()
         await userbot.start()
         console.print("└ [green]Clients Booted Successfully!")
-        initial = await startup_send_new("Starting Yukki Music Bot...")
+        initial = await startup_send_new("Starting Fanda Toxic Bot...")
         await asyncio.sleep(0.5)
         all_over = await startup_send_new("Checking Required Directories...")
         console.print(
@@ -94,7 +94,7 @@ async def initiate_bot():
         await asyncio.sleep(2)
         console.print("\n┌ [red]Checking the existence of Database...")
         if mango == "":
-            status.update(status="[bold red] Failed to boot Yukki Music Bot!")
+            status.update(status="[bold red] Failed to boot Fanda Toxic Bot!")
             console.print(
                 "[bold yellow]\nWARNING! DATABASE URL NOT FOUND!!\n\nExiting all processes with SIGTERM..."
             )
@@ -104,7 +104,7 @@ async def initiate_bot():
         await asyncio.sleep(0.7)
         console.print("├ [yellow]Validating Database...")
         if not mango.endswith("=majority"):
-            status.update(status="[bold red] Failed to boot Yukki Music Bot!")
+            status.update(status="[bold red] Failed to boot Fanda Toxic Bot!")
             console.print(
                 "[bold yellow]\nWARNING! INVALID DATABASE URL! USE ONLY MONGO DB URL!!\n\nExiting all processes with SIGTERM..."
             )
@@ -112,7 +112,7 @@ async def initiate_bot():
         try:
             smex = MongoClient(mango, port=27017)
         except:
-            status.update(status="[bold red] Failed to boot Yukki Music Bot!")
+            status.update(status="[bold red] Failed to boot Fanda Toxic Bot!")
             console.print(
                 "[bold yellow] I hate it to say but something is wrong with your database url :(\ntry rechecking it or replace it with a new one.\n\nExiting all processes with SIGTERM..."
             )
@@ -125,7 +125,7 @@ async def initiate_bot():
         except ConnectionFailure:
             server_status = "404"
         if not server_status == "200":
-            status.update(status="[bold red] Failed to boot Yukki Music Bot!")
+            status.update(status="[bold red] Failed to boot Fanda Toxic Bot!")
             console.print(
                 "[bold yellow] I hate it to say but something is wrong with your database url :(\ntry rechecking it or replace it with a new one.\n\nExiting all processes with SIGTERM..."
             )
