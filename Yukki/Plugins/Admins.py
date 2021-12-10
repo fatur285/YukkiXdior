@@ -78,7 +78,7 @@ async def admins(_, message: Message):
         await music_off(chat_id)
         await Yukki.pytgcalls.pause_stream(chat_id)
         await message.reply_text(
-            f"🎧 Lagu dijeda sama si {message.from_user.mention}!"
+            f"🎧 {message.from_user.mention} Pause a song!"
         )
     if message.command[0][1] == "e":
         if await is_music_playing(message.chat.id):
@@ -86,7 +86,7 @@ async def admins(_, message: Message):
         await music_on(chat_id)
         await Yukki.pytgcalls.resume_stream(message.chat.id)
         await message.reply_text(
-            f"🎧 Lagu dilanjutin sama si {message.from_user.mention}!"
+            f"🎧 {message.from_user.mention} Resume playback!"
         )
     if message.command[0][1] == "t" or message.command[0][1] == "n":
         try:
@@ -96,7 +96,7 @@ async def admins(_, message: Message):
         await remove_active_chat(chat_id)
         await Yukki.pytgcalls.leave_group_call(message.chat.id)
         await message.reply_text(
-            f"🎧 Lagu dimatiin sama si {message.from_user.mention}!"
+            f"✅ {message.from_user.mention} Turn off the song!"
         )
     if message.command[0][1] == "k":
         Queues.task_done(chat_id)
