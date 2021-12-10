@@ -140,7 +140,7 @@ def search_markup2(
         ],
         [
             InlineKeyboardButton(
-                text="q⌫", callback_data=f"popat 2|{query}|{user_id}"
+                text="⌫", callback_data=f"popat 2|{query}|{user_id}"
             ),
             InlineKeyboardButton(
                 text="Tutup", callback_data=f"forceclose {query}|{user_id}"
