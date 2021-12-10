@@ -173,11 +173,11 @@ async def get_formats(CallbackQuery, videoid, user_id, type):
                 ],
                 [
                     InlineKeyboardButton(
-                        text="⬅️  Go Back",
+                        text="Kembali",
                         callback_data=f"good {videoid}|{user_id}",
                     ),
                     InlineKeyboardButton(
-                        text="🗑 Close Menu", callback_data=f"close2"
+                        text="Tutup", callback_data=f"close2"
                     ),
                 ],
             ]
@@ -195,11 +195,11 @@ async def get_formats(CallbackQuery, videoid, user_id, type):
                 ],
                 [
                     InlineKeyboardButton(
-                        text="⬅️  Go Back",
+                        text="Kembali",
                         callback_data=f"good {videoid}|{user_id}",
                     ),
                     InlineKeyboardButton(
-                        text="🗑 Close Menu", callback_data=f"close2"
+                        text="Tutup", callback_data=f"close2"
                     ),
                 ],
             ]
@@ -220,11 +220,11 @@ async def get_formats(CallbackQuery, videoid, user_id, type):
                 ],
                 [
                     InlineKeyboardButton(
-                        text="⬅️  Go Back",
+                        text="Kembali",
                         callback_data=f"good {videoid}|{user_id}",
                     ),
                     InlineKeyboardButton(
-                        text="🗑 Close Menu", callback_data=f"close2"
+                        text="Tutup", callback_data=f"close2"
                     ),
                 ],
             ]
@@ -246,11 +246,11 @@ async def get_formats(CallbackQuery, videoid, user_id, type):
                 ],
                 [
                     InlineKeyboardButton(
-                        text="⬅️  Go Back",
+                        text="Kembali",
                         callback_data=f"good {videoid}|{user_id}",
                     ),
                     InlineKeyboardButton(
-                        text="🗑 Close Menu", callback_data=f"close2"
+                        text="Tutup", callback_data=f"close2"
                     ),
                 ],
             ]
@@ -289,11 +289,11 @@ def get_type(type, format, videoid, user_id):
             ],
             [
                 InlineKeyboardButton(
-                    text="⬅️  Go Back",
+                    text="Kembali",
                     callback_data=f"good {videoid}|{user_id}",
                 ),
                 InlineKeyboardButton(
-                    text="🗑 Close Menu", callback_data=f"close2"
+                    text="Tutup", callback_data=f"close2"
                 ),
             ],
         ]
