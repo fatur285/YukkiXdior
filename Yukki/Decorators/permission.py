@@ -9,9 +9,10 @@ def PermissionCheck(mystic):
         if a.status != "administrator":
             return await message.reply_text(
                 "Gua perlu jadi admin dengan beberapa izin:\n"
-                + "\n- **manage_voice_chats:** Untuk mengelola obrolan suara"
-                + "\n- **delete_messages:** Untuk menghapus Sampah yang Dicari Bot"
-                + "\n- **invite_users**: Untuk mengundang asisten ke dalam grup."
+                + "\n- **Manage_Video_Chats:** Untuk mengelola obrolan suara"
+                + "\n- **Ban_Users:** Untuk menggunakan perintah Gban"
+                + "\n- **Delete_Messages:** Untuk menghapus Sampah yang Dicari Bot"
+                + "\n- **Invite_Users**: Untuk mengundang asisten ke dalam grup."
             )
         if not a.can_manage_voice_chats:
             await message.reply_text(
