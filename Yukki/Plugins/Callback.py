@@ -67,7 +67,7 @@ async def admin_risghts(_, CallbackQuery):
         await music_off(chat_id)
         await Yukki.pytgcalls.pause_stream(chat_id)
         await CallbackQuery.message.reply_text(
-            f"🎧 Voicechat Paused by {CallbackQuery.from_user.mention}!",
+            f"🎧 {CallbackQuery.from_user.mention} Pause a song!",
             reply_markup=audio_markup2,
         )
         await CallbackQuery.message.delete()
@@ -80,7 +80,7 @@ async def admin_risghts(_, CallbackQuery):
         await music_on(chat_id)
         await Yukki.pytgcalls.resume_stream(chat_id)
         await CallbackQuery.message.reply_text(
-            f"🎧 Voicechat Resumed by {CallbackQuery.from_user.mention}!",
+            f"🎧 {CallbackQuery.from_user.mention} Resume playback!",
             reply_markup=audio_markup2,
         )
         await CallbackQuery.message.delete()
@@ -93,7 +93,7 @@ async def admin_risghts(_, CallbackQuery):
         await remove_active_chat(chat_id)
         await Yukki.pytgcalls.leave_group_call(chat_id)
         await CallbackQuery.message.reply_text(
-            f"🎧 Voicechat End/Stopped by {CallbackQuery.from_user.mention}!",
+            f"✅ {CallbackQuery.from_user.mention} Turn off the song!",
             reply_markup=audio_markup2,
         )
         await CallbackQuery.message.delete()
@@ -170,7 +170,7 @@ async def admin_risghts(_, CallbackQuery):
                     photo=thumb,
                     reply_markup=InlineKeyboardMarkup(buttons),
                     caption=(
-                        f"<b>__Skipped Voice Chat__</b>\n\n🎥<b>__Started Playing:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={videoid}) \n⏳<b>__Duration:__</b> {duration_min} Mins\n👤**__Requested by:__** {mention}"
+                        f"<b>__Lagu di skip__</b>\n\n📼<b>__Sekarang muterin:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={videoid}) \n🕒<b>__Durasinya:__</b> {duration_min} Menit\n🎧**__Permintaan si:__** {mention}"
                     ),
                 )
                 os.remove(thumb)
@@ -272,7 +272,7 @@ async def play_playlist(_, CallbackQuery):
     else:
         await CallbackQuery.message.delete()
         mystic = await CallbackQuery.message.reply_text(
-            f"Starting Playlist Of {third_name}.\n\nRequested By:- {CallbackQuery.from_user.first_name}"
+            f"Memulai Daftar Putar Dari {third_name}.\n\nPermintaan si:- {CallbackQuery.from_user.first_name}"
         )
         msg = f"Queued Playlist:\n\n"
         j = 0
@@ -357,7 +357,7 @@ async def play_playlist(_, CallbackQuery):
                 got_queue.append(to_append)
                 await music_on(chat_id)
                 await add_active_chat(chat_id)
-                cap = f"🎥<b>__Playing:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={videoid}) \n💡<b>__Info:__</b> [Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n👤**__Requested by:__** {CallbackQuery.from_user.mention}"
+                cap = f"🏷️<b>__Judulnya:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={videoid}) \n💡<b>__Info:__</b> [More Information](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n🎧**__Permintaan si:__** {CallbackQuery.from_user.mention}"
                 final_output = await CallbackQuery.message.reply_photo(
                     photo=thumb,
                     reply_markup=InlineKeyboardMarkup(buttons),
@@ -432,7 +432,7 @@ async def group_playlist(_, CallbackQuery):
     count = int(count)
     if count == 50:
         return await CallbackQuery.answer(
-            "Sorry! You can only have 50 music in a playlist.",
+            "Sorry! Lu cuman boleh nambahin 50 musik dalam Playlist.",
             show_alert=True,
         )
     loop = asyncio.get_event_loop()
@@ -452,7 +452,7 @@ async def group_playlist(_, CallbackQuery):
     await save_playlist(user_id, videoid, assis, genre)
     Name = CallbackQuery.from_user.first_name
     return await CallbackQuery.message.reply_text(
-        f"Added to {type}'s {genre} Playlist by {CallbackQuery.from_user.mention}"
+        f"Ditambahin ke {type}'s {genre} Playlist si {CallbackQuery.from_user.mention}"
     )
 
 
