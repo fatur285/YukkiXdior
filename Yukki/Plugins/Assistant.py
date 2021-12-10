@@ -268,12 +268,12 @@ async def pmpermit_cq(_, cq):
 async def pmpermit_func(answers, user_id, victim):
     if user_id != ASSID:
         return
-    caption = f"Hi, I'm {ASSNAME}, What are you here for?, You'll be blocked if you send more than 5 messages."
+    caption = f"Hi, Gua {ASSNAME}, Ngapain lu kesini?, Lu diblokir kalo ngirim pesan spam lebih dari 5."
     audio_markup2 = InlineKeyboardMarkup(
         [
             [
                 InlineKeyboardButton(
-                    text=f"Add {MUSIC_BOT_NAME} To Your Group",
+                    text=f"Add {MUSIC_BOT_NAME} Ke grup lu",
                     url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                 ),
             ],
@@ -296,7 +296,17 @@ async def pmpermit_func(answers, user_id, victim):
             ],
             [
                 InlineKeyboardButton(
-                    "Block & Delete", callback_data="pmpermit block {victim}"
+                    text=f"Support",
+                    url=f"https://t.me/fandasupport",
+                ),
+                InlineKeyboardButton(
+                    text=f"Updates",
+                    url=f"https://t.me/fandaproject",
+                ),
+            ],
+            [
+                InlineKeyboardButton(
+                    "Blokir & Hapus", callback_data="pmpermit block {victim}"
                 )
             ],
         ]
