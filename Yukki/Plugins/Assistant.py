@@ -21,22 +21,22 @@ __HELP__ = f"""
 
 
 {ASSISTANT_PREFIX[0]}block [ Reply to a User Message] 
-- Blocks the User from Assistant Account.
+- Memblokir Pengguna dari Akun Asisten.
 
 {ASSISTANT_PREFIX[0]}unblock [ Reply to a User Message] 
-- Unblocks the User from Assistant Account.
+- Buka blokir Pengguna dari Akun Asisten.
 
 {ASSISTANT_PREFIX[0]}approve [ Reply to a User Message] 
-- Approves the User for DM.
+- Menyetujui Pengguna untuk DM.
 
 {ASSISTANT_PREFIX[0]}disapprove [ Reply to a User Message] 
-- Disapproves the User for DM.
+- Menolak Pengguna untuk DM.
 
 {ASSISTANT_PREFIX[0]}pfp [ Reply to a Photo] 
-- Changes Assistant account PFP.
+- Mengubah PFP akun Asisten.
 
 {ASSISTANT_PREFIX[0]}bio [Bio text] 
-- Changes Bio of Assistant Account.
+- Perubahan Bio Akun Asisten.
 
 """
 
@@ -65,10 +65,10 @@ async def awaiting_message(_, message):
     else:
         flood[str(user_id)] = 1
     if flood[str(user_id)] > 5:
-        await message.reply_text("Spam Detected. User Blocked")
+        await message.reply_text("Spam Terdeteksi. Pengguna Diblokir")
         await userbot.send_message(
             LOG_GROUP_ID,
-            f"**Spam Detect Block On Assistant**\n\n- **Blocked User:** {message.from_user.mention}\n- **User ID:** {message.from_user.id}",
+            f"**Deteksi Spam Blok Pada Asisten**\n\n- **Pengguna yang Diblokir:** {message.from_user.mention}\n- **ID pengguna:** {message.from_user.id}",
         )
         return await userbot.block_user(user_id)
     results = await userbot.get_inline_bot_results(
@@ -90,13 +90,13 @@ async def awaiting_message(_, message):
 async def pm_approve(_, message):
     if not message.reply_to_message:
         return await eor(
-            message, text="Reply to a user's message to approve."
+            message, text="Balas pesan pengguna untuk menyetujui."
         )
     user_id = message.reply_to_message.from_user.id
     if await is_pmpermit_approved(user_id):
         return await eor(message, text="User is already approved to pm")
     await approve_pmpermit(user_id)
-    await eor(message, text="User is approved to pm")
+    await eor(message, text="Pengguna disetujui untuk pm")
 
 
 @userbot.on_message(
@@ -107,11 +107,11 @@ async def pm_approve(_, message):
 async def pm_disapprove(_, message):
     if not message.reply_to_message:
         return await eor(
-            message, text="Reply to a user's message to disapprove."
+            message, text="Balas pesan pengguna untuk menolak."
         )
     user_id = message.reply_to_message.from_user.id
     if not await is_pmpermit_approved(user_id):
-        await eor(message, text="User is already disapproved to pm")
+        await eor(message, text="Pengguna sudah tidak disetujui untuk pm")
         async for m in userbot.iter_history(user_id, limit=6):
             if m.reply_markup:
                 try:
@@ -120,7 +120,7 @@ async def pm_disapprove(_, message):
                     pass
         return
     await disapprove_pmpermit(user_id)
-    await eor(message, text="User is disapproved to pm")
+    await eor(message, text="Pengguna tidak disetujui untuk pm")
 
 
 @userbot.on_message(
@@ -130,9 +130,9 @@ async def pm_disapprove(_, message):
 )
 async def block_user_func(_, message):
     if not message.reply_to_message:
-        return await eor(message, text="Reply to a user's message to block.")
+        return await eor(message, text="Balas pesan pengguna untuk diblokir.")
     user_id = message.reply_to_message.from_user.id
-    await eor(message, text="Successfully blocked the user")
+    await eor(message, text="Berhasil memblokir pengguna")
     await userbot.block_user(user_id)
 
 
@@ -144,11 +144,11 @@ async def block_user_func(_, message):
 async def unblock_user_func(_, message):
     if not message.reply_to_message:
         return await eor(
-            message, text="Reply to a user's message to unblock."
+            message, text="Balas pesan pengguna untuk membuka blokir."
         )
     user_id = message.reply_to_message.from_user.id
     await userbot.unblock_user(user_id)
-    await eor(message, text="Successfully Unblocked the user")
+    await eor(message, text="Berhasil membuka blokir pengguna")
 
 
     
@@ -159,11 +159,11 @@ async def unblock_user_func(_, message):
 )
 async def set_pfp(_, message):
     if not message.reply_to_message or not message.reply_to_message.photo:
-        return await eor(message, text="Reply to a photo.") 
+        return await eor(message, text="Balas ke foto.") 
     photo = await message.reply_to_message.download()
     try: 
         await userbot.set_profile_photo(photo=photo)   
-        await eor(message, text="Successfully Changed PFP.")
+        await eor(message, text="Berhasil Mengubah PFP.")
     except Exception as e:
         await eor(message, text=e)
     
@@ -175,16 +175,16 @@ async def set_pfp(_, message):
 )
 async def set_bio(_, message):
     if len(message.command) == 1:
-        return await eor(message , text="Give some text to set as bio.") 
+        return await eor(message , text="Berikan beberapa teks untuk ditetapkan sebagai bio.") 
     elif len(message.command) > 1:
         bio = message.text.split(None, 1)[1]
         try: 
             await userbot.update_profile(bio=bio) 
-            await eor(message , text="Changed Bio.") 
+            await eor(message , text="Bio diubah.") 
         except Exception as e:
             await eor(message , text=e) 
     else:
-        return await eor(message , text="Give some text to set as bio.") 
+        return await eor(message , text="Berikan beberapa teks untuk ditetapkan sebagai bio.") 
 
 flood2 = {}
 
@@ -197,18 +197,18 @@ async def pmpermit_cq(_, cq):
     )
     if data == "approve":
         if user_id != ASSID:
-            return await cq.answer("This Button Is Not For You")
+            return await cq.answer("Tombol Ini Bukan Untuk Anda")
         await approve_pmpermit(int(victim))
         return await app.edit_inline_text(
-            cq.inline_message_id, "User Has Been Approved To PM."
+            cq.inline_message_id, "Pengguna Telah Disetujui Untuk PM."
         )
 
     if data == "block":
         if user_id != ASSID:
-            return await cq.answer("This Button Is Not For You")
+            return await cq.answer("Tombol Ini Bukan Untuk Anda")
         await cq.answer()
         await app.edit_inline_text(
-            cq.inline_message_id, "Successfully blocked the user."
+            cq.inline_message_id, "Berhasil memblokir pengguna."
         )
         await userbot.block_user(int(victim))
         return await userbot.send(
@@ -220,16 +220,16 @@ async def pmpermit_cq(_, cq):
         )
 
     if user_id == ASSID:
-        return await cq.answer("It's For The Other Person.")
+        return await cq.answer("Ini Untuk Orang Lain.")
 
     if data == "to_scam_you":
         async for m in userbot.iter_history(user_id, limit=6):
             if m.reply_markup:
                 await m.delete()
-        await userbot.send_message(user_id, "Blocked, Go scam someone else.")
+        await userbot.send_message(user_id, "Diblokir, Pergi scam orang lain.")
         await userbot.send_message(
             LOG_GROUP_ID,
-            f"**Scam Block On Assistant**\n\n- **Blocked User:** {cq.from_user.mention}\n- **User ID:** {user_id}",
+            f"**Blokir Penipuan Pada Asisten**\n\n- **Pengguna yang Diblokir:** {cq.from_user.mention}\n- **ID pengguna:** {user_id}",
         )
         await userbot.block_user(user_id)
         await cq.answer()
@@ -237,10 +237,10 @@ async def pmpermit_cq(_, cq):
         async for m in userbot.iter_history(user_id, limit=6):
             if m.reply_markup:
                 await m.delete()
-        await userbot.send_message(user_id, f"Blocked, No Promotions.")
+        await userbot.send_message(user_id, f"Diblokir, Tidak Ada Promosi.")
         await userbot.send_message(
             LOG_GROUP_ID,
-            f"**Promotion Block On Assistant**\n\n- **Blocked User:** {cq.from_user.mention}\n- **User ID:** {user_id}",
+            f"**Blok Promosi Di Asisten**\n\n- **Pengguna yang Diblokir:** {cq.from_user.mention}\n- **ID Pengguna:** {user_id}",
         )
         await userbot.block_user(user_id)
         await cq.answer()
@@ -252,16 +252,16 @@ async def pmpermit_cq(_, cq):
             flood2[str(user_id)] = 1
         if flood2[str(user_id)] > 5:
             await userbot.send_message(
-                user_id, "SPAM DETECTED, USER BLOCKED."
+                user_id, "SPAM TERDETEKSI, PENGGUNA DIBLOKIR."
             )
             await userbot.send_message(
                 LOG_GROUP_ID,
-                f"**Spam Detect Block On Assistant**\n\n- **Blocked User:** {cq.from_user.mention}\n- **User ID:** {user_id}",
+                f"**Deteksi Spam Blok Pada Asisten**\n\n- **Pengguna yang Diblokir:** {cq.from_user.mention}\n- **ID Pengguna:** {user_id}",
             )
             return await userbot.block_user(user_id)
         await userbot.send_message(
             user_id,
-            "I'm busy right now, will approve you shortly, DO NOT SPAM.",
+            "Gua lagi sibuk sekarang, akan segera menyetujui, JANGAN SPAM.",
         )
 
 
@@ -296,12 +296,10 @@ async def pmpermit_func(answers, user_id, victim):
             ],
             [
                 InlineKeyboardButton(
-                    text=f"Support",
-                    url=f"https://t.me/fandasupport",
+                    text=f"Support", url=f"https://t.me/fandasupport"
                 ),
                 InlineKeyboardButton(
-                    text=f"Updates",
-                    url=f"https://t.me/fandaproject",
+                    text=f"Updates", url=f"https://t.me/fandaproject"
                 ),
             ],
             [
